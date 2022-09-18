@@ -1,17 +1,15 @@
 import "./Card.css";
 
-function Card() {
+function Card({ question, answer, tag }) {
   return (
     <section className="card">
-      <h2>Question</h2>
+      <h2>{question}</h2>
       <button className="card__button-answer" type="button">
         Show answer
       </button>
-      <p className="card__answer card__answer--active">Answer lorem ipsum...</p>
+      <p className="card__answer card__answer--active">{answer}</p>
       <ul className="card__tag-list">
-        <li className="card__tag-list-item">#HTML</li>
-        <li className="card__tag-list-item">#CSS</li>
-        <li className="card__tag-list-item">#JavaScript</li>
+        <li className="card__tag-list-item">#{tag}</li>
       </ul>
       <div className="card__button-bookmark">
         <button className="card__bookmark" aria-label="bookmark" type="button">

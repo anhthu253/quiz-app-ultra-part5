@@ -8,9 +8,9 @@ function App() {
     <div className="app">
       <Header />
       <main className="app__main">
-        <Card />
-        <Card />
-        <Card />
+        <Card question="Question 1" answer="Answer 1" tag="Tag 1" />
+        <Card question="Question 2" answer="Answer 2" tag="Tag 2" />
+        <Card question="Question 3" answer="Answer 3" tag="Tag 3" />
       </main>
       <Navigation />
     </div>
