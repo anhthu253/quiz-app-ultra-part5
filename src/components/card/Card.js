@@ -1,6 +1,6 @@
 import "./Card.css";
 
-function Card({ question, answer, tag }) {
+function Card({ question, answer, tags }) {
   return (
     <section className="card">
       <h2>{question}</h2>
@@ -9,7 +9,11 @@ function Card({ question, answer, tag }) {
       </button>
       <p className="card__answer card__answer--active">{answer}</p>
       <ul className="card__tag-list">
-        <li className="card__tag-list-item">#{tag}</li>
+        {tags.map((tag, index) => (
+          <li key={index} className="card__tag-list-item">
+            #{tag}
+          </li>
+        ))}
       </ul>
       <div className="card__button-bookmark">
         <button className="card__bookmark" aria-label="bookmark" type="button">
