@@ -16,7 +16,7 @@
 }
 
 .navigation__list-item {
-  padding: 1.5rem 0.5rem;
+  padding: 1.5em 0.5em;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -38,8 +38,14 @@
 .navigation__button {
   background: transparent;
   border: none;
+  font-size: 1em;
 }
 
 .navigation__button:hover {
   cursor: pointer;
+}
+
+.navigation__icon {
+  height: 1.5em;
+  width: 1.5em;
 }
