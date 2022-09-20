@@ -16,15 +16,9 @@
 }
 
 .navigation__list-item {
-  padding: 1.5em 0.5em;
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-.navigation__list-item:hover {
-  cursor: pointer;
-  opacity: 0.5;
 }
 
 .navigation__list-item--active {
@@ -39,9 +33,13 @@
   background: transparent;
   border: none;
   font-size: 1em;
+  padding: 1.5em 0.5em;
+  width: 100%;
+  height: 100%;
 }
 
 .navigation__button:hover {
+  opacity: 0.5;
   cursor: pointer;
 }
 
