@@ -1,13 +1,24 @@
+import { useState } from "react";
 import "./Card.css";
 
 function Card({ question, answer, tags }) {
+  const [showAnswer, setShowAnswer] = useState(false);
+
   return (
     <section className="card">
       <h2>{question}</h2>
-      <button className="card__button-answer" type="button">
-        Show answer
+      <button
+        onClick={() =>
+          setShowAnswer((previousShowAnswer) => !previousShowAnswer)
+        }
+        className="card__button-answer"
+        type="button"
+      >
+        {showAnswer ? "Hide answer" : "Show answer"}
       </button>
-      <p className="card__answer card__answer--active">{answer}</p>
+      {showAnswer && (
+        <p className="card__answer card__answer--active">{answer}</p>
+      )}
       <ul className="card__tag-list">
         {tags.map((tag, index) => (
           <li key={index} className="card__tag-list-item">
