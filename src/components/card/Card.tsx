@@ -1,9 +1,12 @@
-import { useState } from "react";
+import {FC, useState} from "react";
 import "./Card.css";
+import ICard from "./ICard"
 
-function Card({ question, answer, tags, bookmarked }) {
+interface CardProps extends ICard{
+  letClick:()=>void
+}
+const Card:FC<CardProps>=({ question, answer, tags, bookmarked, letClick }) =>{
   const [showAnswer, setShowAnswer] = useState(false);
-
   return (
     <section className="card">
       <h2>{question}</h2>
@@ -28,6 +31,7 @@ function Card({ question, answer, tags, bookmarked }) {
       </ul>
       <div className="card__button-bookmark">
         <button
+        onClick={letClick}
           className={`card__bookmark${
             bookmarked ? " card__bookmark--active" : ""
           }`}

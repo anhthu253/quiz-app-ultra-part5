@@ -1,6 +1,12 @@
-import "./Navigation.css";
+import "./Navigation.css"; 
+import {FC} from "react"
 
-function Navigation({ page, setPage }) {
+type NavigationProps = {
+  page:string,
+  setPage:(arg:string) => void
+}
+
+  const Navigation:FC<NavigationProps>=({page, setPage}) => {
   return (
     <nav className="navigation">
       <ul className="navigation__list">

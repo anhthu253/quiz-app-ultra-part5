@@ -6,7 +6,7 @@ import Cards from "./pages/Cards";
 import Create from "./pages/Create";
 import Profile from "./pages/Profile";
 
-const cards = [
+const initialCards = [
   {
     id: "b5db267b-3275-4a86-a9f4-e7f927d33ed0",
     question: "Question 1",
@@ -32,14 +32,19 @@ const cards = [
 
 function App() {
   const [page, setPage] = useState("home");
+  const [cards, setCards] = useState(initialCards)
+  
+  function toggleBookmark(id?:string){
+    setCards(cards.map((card)=>card.id===id?{...card, bookmarked:!card.bookmarked}:card))
+  }
 
   return (
     <div className="app">
       <Header />
       <main className="app__main">
-        {page === "home" && <Cards cards={cards} />}
+        {page === "home" && <Cards cards={cards} toggleBookmark={toggleBookmark} />}
         {page === "bookmark" && (
-          <Cards cards={cards.filter((card) => card.bookmarked)} />
+          <Cards cards={cards.filter((card) => card.bookmarked)} toggleBookmark={toggleBookmark} />
         )}
         {page === "create" && <Create />}
         {page === "profile" && <Profile />}
